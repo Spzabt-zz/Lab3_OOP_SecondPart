@@ -1,0 +1,10 @@
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\bin\Debug\ShapeController.exe.config
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\bin\Debug\ShapeController.exe
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\bin\Debug\ShapeController.pdb
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.csprojAssemblyReference.cache
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.Properties.Resources.resources
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.csproj.GenerateResource.cache
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.csproj.CoreCompileInputs.cache
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.exe
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.pdb
+D:\Study\ООП\Semestr_2\Lab3_OOP_PartTwo\ShapeController\obj\Debug\ShapeController.Form1.resources
