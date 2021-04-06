@@ -30,12 +30,16 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ySuperDownButton = new System.Windows.Forms.Button();
+            this.xSuperRightButton = new System.Windows.Forms.Button();
+            this.xSuperLeftButton = new System.Windows.Forms.Button();
+            this.ySuperUpButton = new System.Windows.Forms.Button();
             this.createTriangleButton = new System.Windows.Forms.Button();
             this.createCircleButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.xLeftButton = new System.Windows.Forms.Button();
+            this.yDownButton = new System.Windows.Forms.Button();
+            this.xRightButton = new System.Windows.Forms.Button();
+            this.yUpButton = new System.Windows.Forms.Button();
             this.decreaseButton = new System.Windows.Forms.Button();
             this.increaseButton = new System.Windows.Forms.Button();
             this.showButton = new System.Windows.Forms.Button();
@@ -60,12 +64,16 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.ySuperDownButton);
+            this.splitContainer1.Panel1.Controls.Add(this.xSuperRightButton);
+            this.splitContainer1.Panel1.Controls.Add(this.xSuperLeftButton);
+            this.splitContainer1.Panel1.Controls.Add(this.ySuperUpButton);
             this.splitContainer1.Panel1.Controls.Add(this.createTriangleButton);
             this.splitContainer1.Panel1.Controls.Add(this.createCircleButton);
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
-            this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.xLeftButton);
+            this.splitContainer1.Panel1.Controls.Add(this.yDownButton);
+            this.splitContainer1.Panel1.Controls.Add(this.xRightButton);
+            this.splitContainer1.Panel1.Controls.Add(this.yUpButton);
             this.splitContainer1.Panel1.Controls.Add(this.decreaseButton);
             this.splitContainer1.Panel1.Controls.Add(this.increaseButton);
             this.splitContainer1.Panel1.Controls.Add(this.showButton);
@@ -80,6 +88,46 @@
             this.splitContainer1.Size = new System.Drawing.Size(1264, 681);
             this.splitContainer1.SplitterDistance = 351;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // ySuperDownButton
+            // 
+            this.ySuperDownButton.Location = new System.Drawing.Point(155, 637);
+            this.ySuperDownButton.Name = "ySuperDownButton";
+            this.ySuperDownButton.Size = new System.Drawing.Size(42, 23);
+            this.ySuperDownButton.TabIndex = 16;
+            this.ySuperDownButton.Text = "Y++";
+            this.ySuperDownButton.UseVisualStyleBackColor = true;
+            this.ySuperDownButton.Click += new System.EventHandler(this.ySuperDownButton_Click);
+            // 
+            // xSuperRightButton
+            // 
+            this.xSuperRightButton.Location = new System.Drawing.Point(251, 564);
+            this.xSuperRightButton.Name = "xSuperRightButton";
+            this.xSuperRightButton.Size = new System.Drawing.Size(42, 23);
+            this.xSuperRightButton.TabIndex = 15;
+            this.xSuperRightButton.Text = "-->>";
+            this.xSuperRightButton.UseVisualStyleBackColor = true;
+            this.xSuperRightButton.Click += new System.EventHandler(this.xSuperRightButton_Click);
+            // 
+            // xSuperLeftButton
+            // 
+            this.xSuperLeftButton.Location = new System.Drawing.Point(59, 564);
+            this.xSuperLeftButton.Name = "xSuperLeftButton";
+            this.xSuperLeftButton.Size = new System.Drawing.Size(42, 23);
+            this.xSuperLeftButton.TabIndex = 14;
+            this.xSuperLeftButton.Text = "<<--";
+            this.xSuperLeftButton.UseVisualStyleBackColor = true;
+            this.xSuperLeftButton.Click += new System.EventHandler(this.xSuperLeftButton_Click);
+            // 
+            // ySuperUpButton
+            // 
+            this.ySuperUpButton.Location = new System.Drawing.Point(155, 492);
+            this.ySuperUpButton.Name = "ySuperUpButton";
+            this.ySuperUpButton.Size = new System.Drawing.Size(42, 23);
+            this.ySuperUpButton.TabIndex = 13;
+            this.ySuperUpButton.Text = "Y- -";
+            this.ySuperUpButton.UseVisualStyleBackColor = true;
+            this.ySuperUpButton.Click += new System.EventHandler(this.ySuperUpButton_Click);
             // 
             // createTriangleButton
             // 
@@ -101,41 +149,45 @@
             this.createCircleButton.UseVisualStyleBackColor = true;
             this.createCircleButton.Click += new System.EventHandler(this.createCircleButton_Click);
             // 
-            // button4
+            // xLeftButton
             // 
-            this.button4.Location = new System.Drawing.Point(74, 564);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "<-";
-            this.button4.UseVisualStyleBackColor = true;
+            this.xLeftButton.Location = new System.Drawing.Point(107, 564);
+            this.xLeftButton.Name = "xLeftButton";
+            this.xLeftButton.Size = new System.Drawing.Size(42, 23);
+            this.xLeftButton.TabIndex = 10;
+            this.xLeftButton.Text = "<-";
+            this.xLeftButton.UseVisualStyleBackColor = true;
+            this.xLeftButton.Click += new System.EventHandler(this.xLeftButton_Click);
             // 
-            // button3
+            // yDownButton
             // 
-            this.button3.Location = new System.Drawing.Point(141, 608);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "| -";
-            this.button3.UseVisualStyleBackColor = true;
+            this.yDownButton.Location = new System.Drawing.Point(155, 608);
+            this.yDownButton.Name = "yDownButton";
+            this.yDownButton.Size = new System.Drawing.Size(42, 23);
+            this.yDownButton.TabIndex = 9;
+            this.yDownButton.Text = "Y+";
+            this.yDownButton.UseVisualStyleBackColor = true;
+            this.yDownButton.Click += new System.EventHandler(this.yDownButton_Click);
             // 
-            // button2
+            // xRightButton
             // 
-            this.button2.Location = new System.Drawing.Point(203, 564);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "->";
-            this.button2.UseVisualStyleBackColor = true;
+            this.xRightButton.Location = new System.Drawing.Point(203, 564);
+            this.xRightButton.Name = "xRightButton";
+            this.xRightButton.Size = new System.Drawing.Size(42, 23);
+            this.xRightButton.TabIndex = 8;
+            this.xRightButton.Text = "->";
+            this.xRightButton.UseVisualStyleBackColor = true;
+            this.xRightButton.Click += new System.EventHandler(this.xRightButton_Click);
             // 
-            // button1
+            // yUpButton
             // 
-            this.button1.Location = new System.Drawing.Point(141, 521);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "I +";
-            this.button1.UseVisualStyleBackColor = true;
+            this.yUpButton.Location = new System.Drawing.Point(155, 521);
+            this.yUpButton.Name = "yUpButton";
+            this.yUpButton.Size = new System.Drawing.Size(42, 23);
+            this.yUpButton.TabIndex = 7;
+            this.yUpButton.Text = "Y-";
+            this.yUpButton.UseVisualStyleBackColor = true;
+            this.yUpButton.Click += new System.EventHandler(this.yUpButton_Click);
             // 
             // decreaseButton
             // 
@@ -145,6 +197,7 @@
             this.decreaseButton.TabIndex = 6;
             this.decreaseButton.Text = "-";
             this.decreaseButton.UseVisualStyleBackColor = true;
+            this.decreaseButton.Click += new System.EventHandler(this.decreaseButton_Click);
             // 
             // increaseButton
             // 
@@ -154,6 +207,7 @@
             this.increaseButton.TabIndex = 5;
             this.increaseButton.Text = "+";
             this.increaseButton.UseVisualStyleBackColor = true;
+            this.increaseButton.Click += new System.EventHandler(this.increaseButton_Click);
             // 
             // showButton
             // 
@@ -226,15 +280,20 @@
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Button xSuperLeftButton;
+        private System.Windows.Forms.Button xSuperRightButton;
+        private System.Windows.Forms.Button ySuperDownButton;
+        private System.Windows.Forms.Button ySuperUpButton;
+
         private System.Windows.Forms.Button createCircleButton;
         private System.Windows.Forms.Button createTriangleButton;
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button yUpButton;
+        private System.Windows.Forms.Button xRightButton;
+        private System.Windows.Forms.Button yDownButton;
+        private System.Windows.Forms.Button xLeftButton;
 
         private System.Windows.Forms.Button increaseButton;
         private System.Windows.Forms.Button decreaseButton;
