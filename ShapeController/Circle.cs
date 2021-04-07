@@ -36,8 +36,10 @@ namespace ShapeController
         }
 
         public override void EnlargeObject(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox,
-            Rectangle rectangle, Point[] points, Color color)
+            Rectangle rectangle, Point[] points, Color color, Form1 form1)
         {
+            form1.GetDecreaseButton().Enabled = rectangle.Height >= 20 && rectangle.Width >= 20;
+            
             using (_pen = new Pen(pictureBox.BackColor))
                 graphics.DrawEllipse(_pen, rectangle);
             int x = rectangle.X, y = rectangle.Y, width = rectangle.Width, height = rectangle.Height;
@@ -55,8 +57,10 @@ namespace ShapeController
 
         public override void ReduceObject(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox,
             Rectangle rectangle, Point[] points,
-            Color color)
+            Color color, Form1 form1)
         {
+            form1.GetDecreaseButton().Enabled = rectangle.Height >= 20 && rectangle.Width >= 20;
+            
             using (_pen = new Pen(pictureBox.BackColor))
                 graphics.DrawEllipse(_pen, rectangle);
             int x = rectangle.X, y = rectangle.Y, width = rectangle.Width, height = rectangle.Height;

@@ -21,9 +21,11 @@ namespace ShapeController
         private readonly List<CEmblem> _cEmblems;
         private Graphics _graphics;
         private CEmblem _cEmblem;
+        private CEmblem[] _cEmblemArr;
         private int _squareCount = 1;
         private int _circleCount = 1;
         private int _triangleCount = 1;
+        private bool btn1 = false;
 
         public Form1()
         {
@@ -33,12 +35,30 @@ namespace ShapeController
             _cEmblems = new List<CEmblem>();
         }
 
+        public Button GetDecreaseButton()
+        {
+            return decreaseButton;
+        }
+
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            using (_graphics = Graphics.FromImage(_bitmap))
-                _cEmblem.DrawEmblem(_graphics);
-            pictureBox1.Image = _bitmap;
+            if (btn1)
+            {
+                using (_graphics = Graphics.FromImage(_bitmap))
+                {
+                    foreach (var cEmblem in _cEmblemArr)
+                        cEmblem.DrawEmblem(_graphics);
+                }
 
+                btn1 = false;
+            }
+            else
+            {
+                using (_graphics = Graphics.FromImage(_bitmap))
+                    _cEmblem.DrawEmblem(_graphics);
+            }
+
+            pictureBox1.Image = _bitmap;
             pictureBox1.Paint -= pictureBox1_Paint;
         }
 
@@ -130,7 +150,7 @@ namespace ShapeController
                     {
                         cEmblem.EnlargeObject(cEmblem, _graphics, pictureBox1,
                             cEmblem.Rectangle /*cEmblem.GetRectangle()*/, cEmblem.GetPointsArray(),
-                            cEmblem.Color);
+                            cEmblem.Color, this);
                         break;
                     }
                 }
@@ -148,7 +168,7 @@ namespace ShapeController
                     {
                         cEmblem.ReduceObject(cEmblem, _graphics, pictureBox1,
                             cEmblem.Rectangle /*cEmblem.GetRectangle()*/, cEmblem.GetPointsArray(),
-                            cEmblem.Color);
+                            cEmblem.Color, this);
                         break;
                     }
                 }
@@ -313,6 +333,56 @@ namespace ShapeController
                 }
 
             pictureBox1.Image = _bitmap;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btn1 = true;
+            var rectangle = new Rectangle(0, 0, 100, 100);
+            /*_cEmblem = new Square(Color.FromArgb(_random.Next(256), _random.Next(256),
+                _random.Next(256)), $"Square №{_squareCount++}", rectangle, null);*/
+            
+            var rectangle1 = new Rectangle(100, 0, 100, 100);
+            /*_cEmblem = new Circle(Color.FromArgb(_random.Next(256), _random.Next(256),
+                _random.Next(256)), $"Circle №{_circleCount++}", rectangle1, null);*/
+            
+            var point1 = new Point(200, 0);
+            var point2 = new Point(300, 50);
+            var point3 = new Point(200, 100);
+            
+            var points = new Point[]
+            {
+                point1,
+                point2,
+                point3
+            };
+
+            /*_cEmblem = new Triangle(Color.FromArgb(_random.Next(256), _random.Next(256),
+                _random.Next(256)), $"Triangle №{_triangleCount++}", points, point1, point2, point3);*/
+
+            _cEmblemArr = new CEmblem[]
+            {
+                new Square(Color.FromArgb(_random.Next(256), _random.Next(256),
+                    _random.Next(256)), $"Square №{_squareCount++}", rectangle, null),
+                new Circle(Color.FromArgb(_random.Next(256), _random.Next(256),
+                    _random.Next(256)), $"Circle №{_circleCount++}", rectangle1, null),
+                new Triangle(Color.FromArgb(_random.Next(256), _random.Next(256),
+                    _random.Next(256)), $"Triangle №{_triangleCount++}", points, point1, point2, point3)
+            };
+            
+            foreach (var cEmblem in _cEmblemArr)
+            {
+                _cEmblems.Add(cEmblem);
+                objectSelector.Items.Add(cEmblem.Name);
+            } 
+            
+            pictureBox1.Paint += pictureBox1_Paint;
+            Refresh();
+        }
+
+        private void objectSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            decreaseButton.Enabled = true;
         }
     }
 }

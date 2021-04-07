@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
             this.ySuperDownButton = new System.Windows.Forms.Button();
             this.xSuperRightButton = new System.Windows.Forms.Button();
             this.xSuperLeftButton = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.ySuperDownButton);
             this.splitContainer1.Panel1.Controls.Add(this.xSuperRightButton);
             this.splitContainer1.Panel1.Controls.Add(this.xSuperLeftButton);
@@ -88,6 +90,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(1264, 681);
             this.splitContainer1.SplitterDistance = 351;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(183, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Create emblem";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ySuperDownButton
             // 
@@ -254,6 +266,7 @@
             this.objectSelector.Name = "objectSelector";
             this.objectSelector.Size = new System.Drawing.Size(149, 21);
             this.objectSelector.TabIndex = 0;
+            this.objectSelector.SelectedIndexChanged += new System.EventHandler(this.objectSelector_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -279,6 +292,8 @@
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Button xSuperLeftButton;
         private System.Windows.Forms.Button xSuperRightButton;

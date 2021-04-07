@@ -20,11 +20,10 @@ namespace ShapeController
             _points = points;
         }
         
-        /*protected CEmblem(Color color, string name, Rectangle rectangle, Point[] points)
+        /*protected CEmblem(Color color, string name, Point[] points)
         {
             Color = color;
             Name = name;
-            Rectangle = rectangle;
             _points = points;
         }*/
 
@@ -44,9 +43,9 @@ namespace ShapeController
         
         public abstract void ShowEmblem(Graphics graphics, Rectangle rectangle, Color color, Point[] points);
 
-        public abstract void EnlargeObject(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox, Rectangle rectangle, Point[] points, Color color);
+        public abstract void EnlargeObject(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox, Rectangle rectangle, Point[] points, Color color, Form1 form1);
         
-        public abstract void ReduceObject(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox, Rectangle rectangle, Point[] points, Color color);
+        public abstract void ReduceObject(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox, Rectangle rectangle, Point[] points, Color color, Form1 form1);
 
         public abstract void YUp(CEmblem cEmblem, Graphics graphics, PictureBox pictureBox, Rectangle rectangle, Point[] points, Color color);
         
